@@ -7,13 +7,16 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { AppComponent } from './app.component';
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

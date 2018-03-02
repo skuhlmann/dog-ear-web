@@ -1,0 +1,9 @@
+  var config = {
+    apiKey: "AIzaSyAtc4oQVEIWTkyUzOSrxMWCAKpHzok_Tw4",
+    authDomain: "dogear-d5736.firebaseapp.com",
+    databaseURL: "https://dogear-d5736.firebaseio.com",
+    projectId: "dogear-d5736",
+    storageBucket: "dogear-d5736.appspot.com",
+    messagingSenderId: "570491044908"
+  };
+  firebase.initializeApp(config);

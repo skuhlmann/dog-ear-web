@@ -7,3 +7,6 @@
     messagingSenderId: "570491044908"
   };
   firebase.initializeApp(config);
+
+
+  <router-outlet></router-outlet>

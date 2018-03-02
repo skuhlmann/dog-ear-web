@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuard } from './core/auth.guard';
+
+import { BookmarkComponent } from './book/bookmark/bookmark.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: UserProfileComponent,
+    path: 'bookmark',
+    component: BookmarkComponent,
     data: {
-      title: 'User Profile'
-    }
-}
+      title: 'Bookmark'
+    },
+    canActivate: [AuthGuard]
+  }
 ];
 
 // using auth gaurd - probably inject and pass below

@@ -1,14 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    {{ title }}!
+    {{ title }}
   </h1>
-  <h2>Here are some poops: </h2>
-  <ul>
-    <li class="text" style="display:unset" *ngFor="let book of books | async">
-      {{book.title}}
-    </li>
-  </ul>
 </div>
-  
-<router-outlet></router-outlet>
+
+<app-user-profile></app-user-profile>
+

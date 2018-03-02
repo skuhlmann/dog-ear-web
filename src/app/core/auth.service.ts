@@ -13,7 +13,6 @@ interface User {
   email: string;
   photoURL?: string;
   displayName?: string;
-  favoriteColor?: string;
 }
 
 @Injectable()
@@ -45,6 +44,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
+        this.router.navigate(['/bookmark']);
       })
   }
 

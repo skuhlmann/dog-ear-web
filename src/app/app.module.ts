@@ -8,15 +8,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { BookModule } from './book/book.module';
 
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    UserProfileComponent
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    CoreModule
+    CoreModule,
+    BookModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

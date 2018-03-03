@@ -2,9 +2,18 @@
   bookmark works!
 </p>
 
-
 <ul>
   <li class="text" style="display:unset" *ngFor="let book of books | async">
-    {{book.title}}
+      <p>
+        {{book.title}}
+      </p>
   </li>
 </ul>
+
+<p *ngIf="activeBook else loading">Active book: {{ activeBook.title }}</p>
+<!-- <p *ngIf="activeBook | async">Active book: {{ activeBook.title }}</p> -->
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+

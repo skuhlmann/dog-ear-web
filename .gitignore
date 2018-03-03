@@ -45,3 +45,5 @@ Thumbs.db
 
 #Firebase
 /src/environments/firebase.config.ts
+
+.scratch

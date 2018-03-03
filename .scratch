@@ -10,3 +10,8 @@
 
 
   <router-outlet></router-outlet>
+
+
+  <li class="text" style="display:unset" *ngFor="let book of books | async">
+    {{book.title}}
+  </li>

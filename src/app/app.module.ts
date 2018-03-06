@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BookModule } from './book/book.module';
 
+import { BookService } from './book/book.service';
+
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -28,7 +30,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     CoreModule,
     BookModule,
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

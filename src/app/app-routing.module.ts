@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/auth.guard';
 
 import { BookmarkComponent } from './book/bookmark/bookmark.component';
+import { BookComponent } from './book/book/book.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,16 @@ const routes: Routes = [
       title: 'Bookmark'
     },
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'book',
+    component: BookComponent,
+    data: {
+      title: 'Book'
+    },
+    canActivate: [AuthGuard]
+  },
+  
 ];
 
 // using auth gaurd - probably inject and pass below

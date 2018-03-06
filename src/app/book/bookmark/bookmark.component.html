@@ -1,5 +1,5 @@
 <p>
-  bookmark works!
+  all books
 </p>
 
 <ul>
@@ -10,10 +10,18 @@
   </li>
 </ul>
 
-<p *ngIf="activeBook else loading">Active book: {{ activeBook.title }}</p>
+<div *ngIf="activeBook else loading">
+
+  <p>{{ activeBook.title }}</p>
+  <p>{{ activeBook.pageCount }}</p>
+
+</div>
 <!-- <p *ngIf="activeBook | async">Active book: {{ activeBook.title }}</p> -->
 
 <ng-template #loading>
   <p>Loading...</p>
 </ng-template>
+
+
+<app-new-book></app-new-book>
 

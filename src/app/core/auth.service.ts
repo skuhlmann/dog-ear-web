@@ -9,12 +9,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap'
 import 'rxjs/add/operator/take'
 
-interface User {
-  uid: string;
-  email: string;
-  photoURL?: string;
-  displayName?: string;
-}
+import { User } from '../models/user';
+
+// interface User {
+//   uid: string;
+//   email: string;
+//   photoURL?: string;
+//   displayName?: string;
+// }
 
 @Injectable()
 export class AuthService {
@@ -40,6 +42,9 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
+  currentUser() {
+    return this.user
+  }
 
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)

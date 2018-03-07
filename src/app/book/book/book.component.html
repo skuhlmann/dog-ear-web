@@ -8,24 +8,11 @@
 
 <hr>
 
-<div class="container" *ngIf="books.length>0;else noData">
-  <ul *ngFor="let item of books" class="list-group">
-    <li class="list-group-item">
-      <strong (click)="onSelect(item)">{{item.title}}</strong> : {{item.pageCount}}
-    </li>
-    <li>
-      <button (click)="onDelete(item)" >Delete Me!</button>
-    </li>
-
-  </ul>
-
-</div>
-<div class="container">
-  <ng-template #noData>
-    <hr>
-    <h5>There are no books to display</h5>
-  </ng-template>
-</div>
+<app-book-list 
+  [books]="books"
+  (onSelect)="onSelect($event)"
+  (onDelete)="onDelete($event)">
+</app-book-list>
 
 <hr>
 

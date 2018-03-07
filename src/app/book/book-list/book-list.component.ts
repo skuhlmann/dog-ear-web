@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent {
+  @Input() books: Book[] = [];
+  @Output() onSelect = new EventEmitter<Book>();
+  @Output() onDelete = new EventEmitter<Book>();
 
-  //this one will just get a list of books, display them and delegate delete to book component
   constructor() { }
 
-  ngOnInit() {
+  select(book: Book) {
+    this.onSelect.emit(book)
   }
 
+  delete(book: Book) {
+    this.onDelete.emit(book)
+  }
 }

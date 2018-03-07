@@ -1,3 +1,17 @@
-<p>
-  book-list works!
-</p>
+<div class="container" *ngIf="books.length>0;else noData">
+  <ul *ngFor="let item of books" class="list-group">
+    <li class="list-group-item">
+      <strong (click)="select(item)">{{item.title}}</strong> : {{item.pageCount}}
+    </li>
+    <li>
+      <button (click)="delete(item)" >Delete Me!</button>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <ng-template #noData>
+    <hr>
+    <h5>There are no books to display</h5>
+  </ng-template>
+</div>

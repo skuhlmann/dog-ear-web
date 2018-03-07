@@ -11,6 +11,7 @@ import { Book } from '../../models/book';
 export class BookComponent implements OnInit {
 
   books: Book[] = [];
+  activeBook: Book;
 
   constructor(public db: BookService) { }
 
@@ -18,11 +19,17 @@ export class BookComponent implements OnInit {
     this.db.getBooks().subscribe(
       (book: Book[]) => {
         this.books = book;
+
+        this.activeBook = this.books[0];
       }
     );
   }
 
   onDelete(book) {
     this.db.deleteBook(book)
+  }
+
+  onSelect(book) {
+    this.activeBook = book;
   }
 }

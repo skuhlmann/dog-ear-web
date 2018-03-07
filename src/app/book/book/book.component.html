@@ -1,38 +1,4 @@
-<div class="container">
-  <h1>Add New Book</h1>
-  <form (ngSubmit)="bookSubmit()" #addform="ngForm">
-    <div class="form-group">
 
-      <label for="title">Title</label>
-
-      <input type="text" [(ngModel)]="model.title" name="title" class="form-control" id="title" required #title="ngModel">
-
-    </div>
-    <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
-
-      Title is required
-
-    </div>
-
-    <div class="form-group">
-
-      <label for="lastname">Total Pages</label>
-
-      <input type="number" [(ngModel)]="model.pageCount" name="pageCount" class="form-control" id="pageCount" required #pageCount="ngModel">
-
-    </div>
-    <div [hidden]="pageCount.valid || pageCount.pristine" class="alert alert-danger">
-
-      Total Pages is required
-
-    </div>
-
-    <button type="submit" class="btn btn-default form-control" [disabled]="!addform.form.valid">Add Book</button>
-
-  </form>
-</div>
-
-<hr>
 <div class="container" *ngIf="books.length>0;else noData">
   <ul *ngFor="let item of books" class="list-group">
     <li class="list-group-item">
@@ -49,3 +15,7 @@
     <h5>There are no books to display</h5>
   </ng-template>
 </div>
+
+<hr>
+
+<app-add-book></app-add-book>

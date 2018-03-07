@@ -5,9 +5,10 @@ import { FormsModule }   from '@angular/forms';
 import { BookService } from './book.service';
 
 import { BookComponent } from './book/book.component';
+import { AddBookComponent } from './add-book/add-book.component';
 
 @NgModule({
-  declarations: [BookComponent],
+  declarations: [BookComponent, AddBookComponent],
   imports: [
     CommonModule,
     FormsModule

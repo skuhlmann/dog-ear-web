@@ -11,10 +11,6 @@ import { Book } from '../../models/book';
 export class BookComponent implements OnInit {
 
   books: Book[] = [];
-  model = { 
-    title: '', 
-    pageCount: '',
-  };
 
   constructor(public db: BookService) { }
 
@@ -24,12 +20,6 @@ export class BookComponent implements OnInit {
         this.books = book;
       }
     );
-  }
-
-  bookSubmit() {
-    this.db.addBook(this.model);
-    this.model.title = '';
-    this.model.pageCount = '';
   }
 
   onDelete(book) {

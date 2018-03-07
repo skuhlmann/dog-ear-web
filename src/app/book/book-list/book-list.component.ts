@@ -11,11 +11,16 @@ export class BookListComponent {
   @Input() books: Book[] = [];
   @Output() onSelect = new EventEmitter<Book>();
   @Output() onDelete = new EventEmitter<Book>();
+  @Output() onUpdate = new EventEmitter<Book>();
 
   constructor() { }
 
   select(book: Book) {
     this.onSelect.emit(book)
+  }
+
+  update(book: Book) {
+    this.onUpdate.emit(book)
   }
 
   delete(book: Book) {

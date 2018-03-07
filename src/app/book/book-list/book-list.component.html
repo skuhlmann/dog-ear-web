@@ -1,10 +1,17 @@
 <div class="container" *ngIf="books.length>0;else noData">
   <ul *ngFor="let item of books" class="list-group">
-    <li class="list-group-item">
-      <strong (click)="select(item)">{{item.title}}</strong> : {{item.pageCount}}
+
+    <li>
+        <input type="text" [(ngModel)]="item.title" name="title" class="form-control" id="title" (blur)="update(item)">
     </li>
     <li>
-      <button (click)="delete(item)" >Delete Me!</button>
+        <label for="pageCount">Total Pages</label>
+        <input type="number" [(ngModel)]="item.pageCount" name="pageCount" class="form-control" id="pageCount" #pageCount="ngModel" (blur)="update(item)">
+    </li>
+
+
+    <li>
+        <button (click)="update(item)" >Update Me!</button> | <button (click)="select(item)" >Select Me!</button> | <button (click)="delete(item)" >Delete Me!</button>
     </li>
   </ul>
 </div>

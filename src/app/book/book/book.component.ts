@@ -25,11 +25,15 @@ export class BookComponent implements OnInit {
     );
   }
 
-  onDelete(book) {
-    this.db.deleteBook(book)
-  }
-
   onSelect(book) {
     this.activeBook = book;
+  }
+
+  onUpdate(book) {
+    this.db.updateBook(book)
+  }
+
+  onDelete(book) {
+    this.db.deleteBook(book)
   }
 }

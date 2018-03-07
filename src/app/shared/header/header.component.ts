@@ -12,9 +12,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  title = 'DogEar';
+  title: string;
 
-  constructor() { }
+  constructor() { 
+    this.title = "DogEar"; 
+  }
 
   ngOnInit() {
   }

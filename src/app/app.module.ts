@@ -7,20 +7,16 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { BookModule } from './book/book.module';
 
-import { BookService } from './book/book.service';
-
 import { AppComponent } from './app.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { HeaderComponent } from './layout/header/header.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserProfileComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,10 +25,11 @@ import { HeaderComponent } from './layout/header/header.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    SharedModule,
     CoreModule,
     BookModule,
   ],
-  providers: [BookService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,17 +11,11 @@ import 'rxjs/add/operator/take'
 
 import { User } from '../models/user';
 
-// interface User {
-//   uid: string;
-//   email: string;
-//   photoURL?: string;
-//   displayName?: string;
-// }
-
 @Injectable()
 export class AuthService {
 
   user: Observable<User>;
+  currentUser: User;
 
   constructor(private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -30,6 +24,7 @@ export class AuthService {
     this.user = this.afAuth.authState
       .switchMap(user => {
         if (user) {
+          this.currentUser = user;
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
         } else {
           return Observable.of(null)
@@ -42,9 +37,9 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
-  currentUser() {
-    return this.user
-  }
+  // currentUser() {
+  //   return this.currentUser;
+  // }
 
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
@@ -53,7 +48,6 @@ export class AuthService {
         this.router.navigate(['/bookmark']);
       })
   }
-
 
   private updateUserData(user) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);

@@ -22,7 +22,7 @@ export class BookComponent implements OnInit {
     this.db.getBooks().subscribe(
       (book: Book[]) => {
         this.arr = book;
-        console.log(this.arr);
+        // console.log(this.arr);
       }
     );
   }

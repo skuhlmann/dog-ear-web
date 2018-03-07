@@ -12,11 +12,10 @@ export class BookService {
   bookscollection: AngularFirestoreCollection<Book>;
   books: Observable<Book[]>;
   bookDoc: AngularFirestoreDocument<Book>;
-  // user: Observable<User>;
-  // user: any;
+  currentUser: User;
 
-  constructor(public db: AngularFirestore, public auth: AuthService) { 
-    this.bookscollection = this.db.collection('books', x => x.orderBy('title', 'asc'));
+  constructor(public db: AngularFirestore, public auth: AuthService ) { 
+    this.bookscollection = this.db.collection('books', x => x.where('userId', '==', auth.currentUser.uid));
 
     this.books = this.bookscollection.snapshotChanges().map(
       changes => {
@@ -28,37 +27,19 @@ export class BookService {
           });
 
       });
-
-      // this.user = this.auth.currentUser.subscribe((user) => {
-      //   return user;
-      // });
-
-      // this.user = this.auth.user.subscribe((user) => {
-      //   console.log('user')
-      //   console.log(user)
-      //   return user;
-      // });
-
-      // this.auth.user.subscribe((user) => {
-      //   this.books = this.getBooks(user.uid)
-  
-      //   this.books.subscribe((books) => {
-      //     this.activeBook = this.setActiveBook(books)
-      //   })
-      // })
   }
-
+     
   getBooks() {
-    //scope to user
     return this.books;
   }
-
+  
   addBook(book) {
     //the service will need to deal with setting and updating all active/inative
-    //on new and mayeb on updates to
+    //on new and maybe on updates too
+    //then can be used when page counts are added
 
-    //also scope to user
     book.active = true;
+    book.userId = this.auth.currentUser.uid;
     this.bookscollection.add(book);
   }
 
@@ -71,6 +52,4 @@ export class BookService {
     this.bookDoc = this.db.doc(`books/${book.id}`);
     this.bookDoc.update(book);
   }
-
-  //need an update?
 }

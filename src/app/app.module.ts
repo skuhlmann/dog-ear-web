@@ -14,11 +14,13 @@ import { BookService } from './book/book.service';
 
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

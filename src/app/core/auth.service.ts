@@ -37,15 +37,11 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
-  // currentUser() {
-  //   return this.currentUser;
-  // }
-
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
-        this.router.navigate(['/bookmark']);
+        this.router.navigate(['/book']);
       })
   }
 

@@ -3,18 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from './core/auth.guard';
 
-import { BookmarkComponent } from './book/bookmark/bookmark.component';
 import { BookComponent } from './book/book/book.component';
 
 const routes: Routes = [
-  {
-    path: 'bookmark',
-    component: BookmarkComponent,
-    data: {
-      title: 'Bookmark'
-    },
-    canActivate: [AuthGuard]
-  },
   {
     path: 'book',
     component: BookComponent,
@@ -26,11 +17,6 @@ const routes: Routes = [
   
 ];
 
-// using auth gaurd - probably inject and pass below
-// const routes: Routes = [
-//   ///...
-//   { path: 'notes', component: NotesListComponent,  canActivate: [AuthGuard] },
-// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

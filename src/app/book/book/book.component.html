@@ -33,10 +33,10 @@
 </div>
 
 <hr>
-<div class="container" *ngIf="arr.length>0;else noData">
-  <ul *ngFor="let item of arr" class="list-group">
+<div class="container" *ngIf="books.length>0;else noData">
+  <ul *ngFor="let item of books" class="list-group">
     <li class="list-group-item">
-      <strong>{{item.title}}</strong> : {{item.pageCount}}
+      <strong>{{item.title}}</strong> : {{item.pageCount}} : {{item.active}}
       | <button (click)="onDelete(item)" >Delete Me!</button>
     </li>
 

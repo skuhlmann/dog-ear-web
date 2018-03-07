@@ -10,7 +10,7 @@ import { Book } from '../../models/book';
 })
 export class BookComponent implements OnInit {
 
-  arr: Book[] = [];
+  books: Book[] = [];
   model = { 
     title: '', 
     pageCount: '',
@@ -21,8 +21,7 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     this.db.getBooks().subscribe(
       (book: Book[]) => {
-        this.arr = book;
-        // console.log(this.arr);
+        this.books = book;
       }
     );
   }

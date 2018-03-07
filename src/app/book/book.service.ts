@@ -34,15 +34,10 @@ export class BookService {
   }
   
   addBook(book) {
-    //the service will need to deal with setting and updating all active/inative
-    //on new and maybe on updates too
-    //then can be used when page counts are added
-
-    book.active = true;
     book.userId = this.auth.currentUser.uid;
     this.bookscollection.add(book);
   }
-
+  
   deleteBook(book) {
     this.bookDoc = this.db.doc(`books/${book.id}`);
     this.bookDoc.delete();

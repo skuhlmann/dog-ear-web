@@ -35,10 +35,12 @@ export class AddBookmarkComponent implements OnChanges {
   }
 
   submitBookmark() {
-    const newBookmark: Bookmark = {
-      page: this.bookmarkForm.get('page').value
-    }
+    if (this.bookmarkForm.status !== "INVALID") {
+      const newBookmark: Bookmark = {
+        page: this.bookmarkForm.get('page').value
+      }
 
-    this.onAddBookmark.emit(newBookmark);
+      this.onAddBookmark.emit(newBookmark);
+    }
   }
 }

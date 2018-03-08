@@ -1,0 +1,17 @@
+<h2>add bookmark</h2>
+<form [formGroup]="bookmarkForm">
+  <div class="form-group">
+    <div class="center-block">
+      <input type="number" class="form-control" 
+             formControlName="page" (blur)="submitBookmark()">
+    </div>
+  </div> 
+</form>
+
+
+<p>form value: {{bookmarkForm.value | json}}</p>
+<p>form status: {{bookmarkForm.status | json}}</p>
+<p>form value inspect: {{bookmarkForm.get('page').value | json}}</p>
+<p>form pristine: {{bookmarkForm.pristine | json}}</p>
+
+<p>input mark: {{bookmark | json}}</p>

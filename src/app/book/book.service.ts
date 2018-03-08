@@ -7,18 +7,16 @@ import { AuthService } from '../core/auth.service';
 
 import { User } from '../models/user';
 import { Book } from '../models/book';
-import { Page } from '../models/page';
+import { Bookmark } from '../models/bookmark';
 
 @Injectable()
 export class BookService {
   bookscollection: AngularFirestoreCollection<Book>;
   books: Observable<Book[]>;
   bookDoc: AngularFirestoreDocument<Book>;
+  markscollection: AngularFirestoreCollection<Bookmark>;
+  marks: Observable<Bookmark[]>;
   currentUser: User;
-
-  pagescollection: AngularFirestoreCollection<Page>;
-  pages: Observable<Page[]>;
-  // pageDoc: AngularFirestoreDocument<Page>;
 
   constructor(public db: AngularFirestore, public auth: AuthService ) { 
     this.bookscollection = this.db.collection('books', x => x.where('userId', '==', auth.currentUser.uid));
@@ -38,15 +36,15 @@ export class BookService {
     return this.books;
   }
 
-  getPages(book: Book) {
+  getBookmarks(book: Book) {
     this.bookDoc = this.db.doc(`books/${book.id}`);
-    this.pagescollection = this.bookDoc.collection('pages', x => x.orderBy('date', 'desc'));
+    this.markscollection = this.bookDoc.collection('bookmarks', x => x.orderBy('date', 'desc'));
 
-    return this.pages = this.pagescollection.snapshotChanges().map(
+    return this.marks = this.markscollection.snapshotChanges().map(
       changes => {
         return changes.map(
           a => {
-            const data = a.payload.doc.data() as Page;
+            const data = a.payload.doc.data() as Bookmark;
             data.id = a.payload.doc.id;
             return data;
           });
@@ -69,8 +67,8 @@ export class BookService {
     this.bookDoc.update(book);
   }
 
-  addPage(page: Page) {
-    page.date = fb.firestore.FieldValue.serverTimestamp()
-    this.pagescollection.add(page);
+  addBookmark(bookmark: Bookmark) {
+    bookmark.date = fb.firestore.FieldValue.serverTimestamp()
+    this.markscollection.add(bookmark);
   }
 }

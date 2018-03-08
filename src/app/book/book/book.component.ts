@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BookService } from '../book.service';
 import { Book } from '../../models/book';
-import { Page } from '../../models/page';
+import { Bookmark } from '../../models/bookmark';
 
 @Component({
   selector: 'app-book',
@@ -13,7 +13,8 @@ export class BookComponent implements OnInit {
 
   books: Book[] = [];
   activeBook: Book;
-  pages: Page[] = [];
+  marks: Bookmark[] = [];
+  // latestMark: Bookmark;
 
   constructor(public db: BookService) { }
 
@@ -21,32 +22,23 @@ export class BookComponent implements OnInit {
     this.db.getBooks().subscribe(
       (book: Book[]) => {
         this.books = book;
-        console.log(book)
-
         this.activeBook = this.books[0];
-
-        this.db.getPages(this.activeBook).subscribe(
-          (page: Page[]) => {
-
-            console.log(page)
-            this.pages = page;
-          }
-        );
-
+        this.fetchBookmarks();
+      }
+    );
+  }
+  
+  fetchBookmarks() {
+    this.db.getBookmarks(this.activeBook).subscribe(
+      (mark: Bookmark[]) => {
+        this.marks = mark;
       }
     );
   }
 
   onSelect(book) {
     this.activeBook = book;
-
-    this.db.getPages(this.activeBook).subscribe(
-      (page: Page[]) => {
-
-        console.log(page)
-        this.pages = page;
-      }
-    );
+    this.fetchBookmarks();
   }
 
   onUpdate(book) {
@@ -57,9 +49,7 @@ export class BookComponent implements OnInit {
     this.db.deleteBook(book)
   }
 
-  onAddPage() {
-    this.db.addPage( {
-      page: 30
-    });
+  onAddBookmark(bookmark) {
+    this.db.addBookmark(bookmark);
   }
 }

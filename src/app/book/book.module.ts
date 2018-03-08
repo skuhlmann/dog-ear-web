@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 import { BookService } from './book.service';
 
@@ -12,7 +13,8 @@ import { BookListComponent } from './book-list/book-list.component';
   declarations: [BookComponent, AddBookComponent, BookListComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [BookService],
   exports: [BookComponent]

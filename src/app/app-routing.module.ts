@@ -4,8 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './core/auth.guard';
 
 import { BookComponent } from './book/book/book.component';
+import { HomeComponent } from './shared/home/home.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
   {
     path: 'book',
     component: BookComponent,
@@ -14,7 +19,11 @@ const routes: Routes = [
     },
     canActivate: [AuthGuard]
   },
-  
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
 ];
 
 

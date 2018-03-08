@@ -4,6 +4,21 @@
   <p class="book--title">{{activeBook.title}}</p>
   <p class="book--page-count">{{activeBook.pageCount}}</p>
 
+  <div *ngIf="pages.length>0;else noPages">
+    <div *ngFor="let item of pages">
+      {{item.page}}
+    </div>
+  </div>
+
+  <div (click)="onAddPage()">ADD A PAGE</div>
+
+  <div class="container">
+    <ng-template #noPages>
+      <hr>
+      <h5>There are no pages</h5>
+    </ng-template>
+  </div>
+
 </div>
 
 <hr>

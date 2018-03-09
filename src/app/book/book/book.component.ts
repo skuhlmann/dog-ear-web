@@ -14,7 +14,7 @@ export class BookComponent implements OnInit {
   books: Book[] = [];
   activeBook: Book;
   marks: Bookmark[] = [];
-  // latestMark: Bookmark;
+  activeMark: Bookmark;
 
   constructor(public db: BookService) { }
 
@@ -32,6 +32,9 @@ export class BookComponent implements OnInit {
     this.db.getBookmarks(this.activeBook).subscribe(
       (mark: Bookmark[]) => {
         this.marks = mark;
+        this.activeMark = this.marks[0];
+
+        console.log(this.activeMark)
       }
     );
   }

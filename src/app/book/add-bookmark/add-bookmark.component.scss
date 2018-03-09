@@ -1,0 +1,29 @@
+@import '~styles.scss';
+
+.bookmark--input {
+  border: 0;
+  background-color: $primary-color;
+  color: $font-color;
+  caret-color: $font-color;
+  width: 70%;
+  text-align: center;
+  height: 75%;
+}
+
+.bookmark--input:focus {
+  border: 0;
+  outline: none !important;
+}
+
+.bookmark--total-pages {
+  font-size: 2vw;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}

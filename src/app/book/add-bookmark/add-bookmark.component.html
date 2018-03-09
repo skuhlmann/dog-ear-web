@@ -1,9 +1,12 @@
-<h2>add bookmark</h2>
+<div>
+
+</div>
 <form [formGroup]="bookmarkForm">
   <div class="form-group">
-    <div class="center-block">
-      <input type="number" class="form-control" 
-             formControlName="page" (blur)="submitBookmark()">
-    </div>
+    <input type="number" class="bookmark--input" 
+            formControlName="page" (blur)="submitBookmark()">
+    <p class="bookmark--total-pages">
+      of {{ totalPages }} / {{ percentComplete }}%
+    </p>
   </div> 
 </form>

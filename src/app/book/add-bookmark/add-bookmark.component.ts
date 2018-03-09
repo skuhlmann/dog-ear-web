@@ -10,16 +10,20 @@ import { Bookmark } from '../../models/bookmark';
 })
 export class AddBookmarkComponent implements OnChanges {
   @Input() bookmark: Bookmark;
+  @Input() totalPages: string;
   @Output() onAddBookmark = new EventEmitter<Bookmark>();
   bookmarkForm: FormGroup;
+  percentComplete: number;
 
   constructor(private fb: FormBuilder) { 
     this.createForm();
+    this.percentComplete = 50;
   }
   
   ngOnChanges() {
     const activeMark = this.bookmark || { page: ''}
     this.rebuildForm(activeMark)
+    this.setPercentComplete(activeMark);
   }
 
   createForm() {
@@ -32,6 +36,10 @@ export class AddBookmarkComponent implements OnChanges {
     this.bookmarkForm.reset({
       page: mark.page
     })
+  }
+
+  setPercentComplete(activeMark) {
+    this.percentComplete = Math.round((+activeMark.page / +this.totalPages) * 100)
   }
 
   submitBookmark() {

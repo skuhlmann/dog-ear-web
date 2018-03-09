@@ -1,41 +1,17 @@
-<hr>
-  <app-add-bookmark 
-    [bookmark]="marks[0]"
-    (onAddBookmark)="onAddBookmark($event)">
-  </app-add-bookmark>
-<hr>
+<div class="container">
+  <div class="row">
+    <div class="col book--content">
+      <div *ngIf="activeMark">
 
-<div class="container" *ngIf="activeBook">
-  <hr>
-  <p class="book--title">{{activeBook.title}}</p>
-  <p class="book--page-count">{{activeBook.pageCount}}</p>
-
-  <div *ngIf="marks.length>0;else noMarks">
-    <div *ngFor="let item of marks">
-      {{item.page}}
+        <app-add-bookmark 
+          [bookmark]="activeMark"
+          [totalPages]="activeBook.pageCount"
+          (onAddBookmark)="onAddBookmark($event)">
+        </app-add-bookmark>
+      
+        <p class="book--title">{{activeBook.title}}</p>
+      
+      </div>
     </div>
   </div>
-
-  <div (click)="onAddBookmark()">ADD A Bookmark</div>
-
-  <div class="container">
-    <ng-template #noMarks>
-      <hr>
-      <h5>There are no pages</h5>
-    </ng-template>
-  </div>
-
 </div>
-
-<hr>
-
-<app-book-list 
-  [books]="books"
-  (onSelect)="onSelect($event)"
-  (onUpdate)="onUpdate($event)"
-  (onDelete)="onDelete($event)">
-</app-book-list>
-
-<hr>
-
-<app-add-book></app-add-book>

@@ -3,22 +3,14 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  template: `
-    <div class="centered">
-      <h1>
-        {{ title }}
-      </h1>
-      <a routerLink="/home" routerLinkActive="active">Home</a> | 
-      <a routerLink="/book" routerLinkActive="active">Books</a>
-    </div>
-  `,
+  templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   title: string;
 
   constructor() { 
-    this.title = "DogEar"; 
+    this.title = "dogear"; 
   }
 
   ngOnInit() {

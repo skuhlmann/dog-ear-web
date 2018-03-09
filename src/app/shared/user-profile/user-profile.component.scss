@@ -1,3 +1,24 @@
+@import '~styles.scss';
+
 .profile-img {
-  width: 75px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.profile--menu {
+  margin-top: 10px;
+  color: $font-color;
+}
+
+.profile--menu:hover {
+  color: $primary-color;
+
+}
+
+.profile--link {
+  padding: 5px;
+}
+
+.profile--link span {
+  font-size: 10px
 }

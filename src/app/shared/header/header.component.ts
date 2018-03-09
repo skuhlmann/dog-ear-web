@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router'
+import { AuthService } from '../../core/auth.service';
+
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title: string;
+  onBookmark: boolean;
 
-  constructor() { 
+  constructor(public auth: AuthService, public router: Router) { 
     this.title = "dogear"; 
   }
 
   ngOnInit() {
+
+    console.log(this.router.url)
+    console.log(this.router.routerState)
+
   }
 
 }

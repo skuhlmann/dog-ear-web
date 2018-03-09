@@ -8,9 +8,16 @@
 
       <div class="col header--nav-links">
         
-        <a class="header--link" routerLink="/home" routerLinkActive="active"><i class="far fa-circle"></i></a>
-        <a class="header--link" routerLink="/book" routerLinkActive="active"><i class="far fa-bookmark"></i></a>
         <app-user-profile></app-user-profile>
+
+        <div *ngIf="auth.user | async">
+
+          <a class="header--link" *ngIf="router.url !== '/book'" 
+              routerLink="/book" 
+              routerLinkActive="active">
+            <i class="far fa-bookmark"></i>
+          </a>
+        </div>
 
       </div>
     </div>

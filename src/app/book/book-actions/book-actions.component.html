@@ -1,0 +1,29 @@
+<div class="row book-actions" *ngIf="!showingAction()">
+  <div class="book--action-icons">
+    <span (click)="toggle('showList')">
+      <i class="fas fa-plus"></i>
+    </span>
+    <span (click)="toggle('showForm')">
+      <i class="fas fa-exchange-alt"></i>
+    </span>
+  </div>
+</div>
+
+
+<div class="row book-actions" *ngIf="showForm">
+  <div class="book--action-icons">
+    <span (click)="toggle('showForm')">
+      <i class="fas fa-times"></i>
+    </span>
+  </div>
+  <app-add-book></app-add-book>
+</div>
+
+<div class="row book-actions" *ngIf="showList">
+  <div class="book--action-icons">
+    <span (click)="toggle('showList')">
+      <i class="fas fa-times"></i>
+    </span>
+  </div>
+  <app-book-list></app-book-list>
+</div>

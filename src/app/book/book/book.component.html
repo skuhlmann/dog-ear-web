@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col book--content">
-      <div *ngIf="activeMark">
-
+      <div *ngIf="activeBook">
 
         <app-add-bookmark 
           [bookmark]="activeMark"
@@ -11,9 +10,10 @@
         </app-add-bookmark>
       
         <p class="book--title">{{activeBook.title}}</p>
-      
-      </div>
 
+        <app-book-actions></app-book-actions>
+        
+      </div>
     </div>
   </div>
 </div>

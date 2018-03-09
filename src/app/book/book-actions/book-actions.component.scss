@@ -1,0 +1,18 @@
+@import '~styles.scss';
+
+.book-actions {
+  text-align: center;
+}
+
+.book--action-icons {
+  font-size: 2vw;
+}
+
+.book--action-icons span:hover {
+  color: $primary-color;
+  background-color: $font-color;
+}
+
+.book--action-icons span {
+  padding: 10px;
+}

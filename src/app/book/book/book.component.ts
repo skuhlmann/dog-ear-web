@@ -10,7 +10,6 @@ import { Bookmark } from '../../models/bookmark';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-
   books: Book[] = [];
   activeBook: Book;
   marks: Bookmark[] = [];

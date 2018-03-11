@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-book-actions',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-actions.component.scss']
 })
 export class BookActionsComponent implements OnInit {
+  @Input() action: string
+  @Output() actionChange = new EventEmitter();
   showForm: boolean;
   showList: boolean;
 
@@ -17,7 +19,15 @@ export class BookActionsComponent implements OnInit {
   }
 
   toggle(type) {
-    this[type] = !this[type]
+    this[type] = !this[type];
+    
+    if (!this.showingAction()) {
+      this.action = ''
+    } else {
+      this.action = this.showForm ? "bookForm" : "bookList"
+    }
+
+    this.actionChange.emit(this.action)
   }
 
   showingAction() {

@@ -14,8 +14,9 @@ export class BookComponent implements OnInit {
   activeBook: Book;
   marks: Bookmark[] = [];
   activeMark: Bookmark;
+  shownAction: string = "";
 
-  constructor(public db: BookService) { }
+  constructor(public db: BookService) {}
 
   ngOnInit() {
     this.db.getBooks().subscribe(
@@ -25,6 +26,8 @@ export class BookComponent implements OnInit {
         this.fetchBookmarks();
       }
     );
+
+    this.shownAction = "test";
   }
   
   fetchBookmarks() {

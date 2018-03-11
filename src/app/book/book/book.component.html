@@ -11,9 +11,27 @@
       
         <p class="book--title">{{activeBook.title}}</p>
 
-        <app-book-actions></app-book-actions>
+        <app-book-actions [(action)]="shownAction"></app-book-actions>
         
       </div>
     </div>
   </div>
 </div>
+
+
+<div *ngIf="shownAction === 'bookList'">
+  im a list
+  <!-- <app-book-list 
+    [books]="books"
+    (onSelect)="onSelect($event)"
+    (onUpdate)="onUpdate($event)"
+    (onDelete)="onDelete($event)">
+  </app-book-list> -->
+</div>
+
+<div *ngIf="shownAction === 'bookForm'">
+  im a form
+  <!-- <app-add-book></app-add-book> -->
+</div>
+
+

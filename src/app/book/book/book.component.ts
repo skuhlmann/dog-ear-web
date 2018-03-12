@@ -26,8 +26,6 @@ export class BookComponent implements OnInit {
         this.fetchBookmarks();
       }
     );
-
-    this.shownAction = "test";
   }
   
   fetchBookmarks() {

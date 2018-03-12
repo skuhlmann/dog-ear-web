@@ -1,27 +1,28 @@
-<div class="row book-actions" *ngIf="!showingAction()">
-  <div class="book--action-icons">
-    <span (click)="toggle('showList')">
-      <i class="fas fa-plus"></i>
-    </span>
-    <span (click)="toggle('showForm')">
-      <i class="fas fa-exchange-alt"></i>
-    </span>
+<div class="book-actions">
+  <div class="row" *ngIf="!showingAction()">
+    <div class="book-action-icon col-xs">
+      <p (click)="toggle('showForm')">
+        <i class="fas fa-plus"></i>
+      </p>
+      <p (click)="toggle('showList')">
+        <i class="fas fa-exchange-alt"></i>
+      </p>
+    </div>
   </div>
-</div>
 
-
-<div class="row book-actions" *ngIf="showForm">
-  <div class="book--action-icons">
-    <span (click)="toggle('showForm')">
-      <i class="fas fa-times"></i>
-    </span>
+  <div class="row" *ngIf="showForm">
+    <div class="book-action-icon col-xs">
+      <p (click)="toggle('showForm')">
+        <i class="fas fa-times"></i>
+      </p>
+    </div>
   </div>
-</div>
 
-<div class="row book-actions" *ngIf="showList">
-  <div class="book--action-icons">
-    <span (click)="toggle('showList')">
-      <i class="fas fa-times"></i>
-    </span>
+  <div class="row" *ngIf="showList">
+    <div class="book-action-icon col-xs">
+      <p (click)="toggle('showList')">
+        <i class="fas fa-times"></i>
+      </p>
+    </div>
   </div>
 </div>

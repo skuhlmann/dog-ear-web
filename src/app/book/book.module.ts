@@ -17,7 +17,8 @@ import { BookActionsComponent } from './book-actions/book-actions.component';
     BookComponent, 
     AddBookComponent, 
     BookListComponent, 
-    AddBookmarkComponent, BookActionsComponent
+    AddBookmarkComponent, 
+    BookActionsComponent,
   ],
   imports: [
     CommonModule,

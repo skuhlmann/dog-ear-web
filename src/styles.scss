@@ -23,3 +23,20 @@ a:hover {
   color: $primary-color;
   text-decoration: none;
 }
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+// .ng-valid[required], .ng-valid.required {
+//   border-left: 3px solid #42A948;
+// }
+
+// .ng-invalid:not(form) {
+//   border-left: 3px solid #A94442;
+// }

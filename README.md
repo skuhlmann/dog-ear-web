@@ -1,5 +1,16 @@
 # DogEar
 
+Bookmark web app. Bookmarks for a real book, not the other kind you mostly use on the web. 
+
+## Features/Focus
+- Angular 5
+- Firebase
+  - Cloud Firestore
+  - Google OAuth
+- BEM css approach
+
+## Angular CLI
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
 
 ## Development server

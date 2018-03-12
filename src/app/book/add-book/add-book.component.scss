@@ -1,7 +1,57 @@
+@import '~styles.scss';
+
+.new-book {
+  text-align: center;
+}
+
+.new-book__form_group {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: .2em;
+}
+
+.new-book__title {
+  font-size: 3vw;
+}
+
+.new-book__input-label {
+  font-size: 2vw;
+  text-align: left;
+}
+
+.new-book__input {
+  width: 100%;
+  background-color: $primary-color;
+  color: $font-color;
+  // caret-color: $font-color;
+  border: 0;
+  border-bottom: 1px solid $font-color;
+  border-radius: 0;
+  max-height: 50px;
+  font-size: 3vw;
+}
+
+.new-book__input:focus {
+  // background-color: $primary-color;
+  // color: $font-color;
+  // caret-color: $font-color;
+  // border: 0;
+  outline: none !important;
+}
+
+.new-book__warning {
+  color: #A94442;
+  font-weight: 700;
+  font-size: 1vw;
+  text-align: left
+}
+
 .ng-valid[required], .ng-valid.required {
-  border-left: 3px solid #42A948;
+  border-bottom: 1px solid #42A948;
 }
 
 .ng-invalid:not(form) {
-  border-left: 3px solid #A94442;
+  border-bottom: 1px solid #A94442;
 }

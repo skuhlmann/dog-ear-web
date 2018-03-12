@@ -6,15 +6,15 @@
   color: $font-color;
 }
 
-.book-action-icon {
+.book-actions__icon {
   font-size: 3vw;
 }
 
-.book-action-icon p:hover {
-  color: $primary-color;
-  background-color: $font-color;
+.book-actions__icon-text {
+  padding: 0px 10px 0px 10px;
 }
 
-.book-action-icon p {
-  padding: 0px 10px 0px 10px;
+.book-actions__icon-text:hover {
+  color: $primary-color;
+  background-color: $font-color;
 }

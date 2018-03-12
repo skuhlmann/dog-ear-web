@@ -1,37 +1,28 @@
-<div class="container">
-  <h1>Add New Book</h1>
+<div class="container new-book">
 
+  <p class="new-book__title">What are you reading?</p>
+  
   <form #addform="ngForm">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" id="title"
-             required
-             [(ngModel)]="model.title" name="title"
-             #title="ngModel">
+    <div class="new-book__form_group">
+      <input type="text" class="new-book__input" id="title"
+              required placeholder="Title"
+              [(ngModel)]="model.title" name="title"
+              #title="ngModel">
+      <p class="new-book__warning" [hidden]="title.valid || title.pristine">*required</p>
     </div>
 
-    <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
-      Title is required
-    </div>
+    <div class="new-book__form_group">
+        <input type="number" class="new-book__input" id="pageCount" 
+                required placeholder="Total Pages"
+                [(ngModel)]="model.pageCount" name="pageCount"
+                #pageCount="ngModel">
+        <p class="new-book__warning" [hidden]="pageCount.valid || pageCount.pristine">*required</p>
+      </div>
 
-    <div class="form-group">
-      <label for="pageCount">Total Pages</label>
-      <input type="number" class="form-control" id="pageCount" 
-             required 
-             [(ngModel)]="model.pageCount" name="pageCount"
-             #pageCount="ngModel">
-
-    </div>
-
-    <div [hidden]="pageCount.valid || pageCount.pristine" class="alert alert-danger">
-      Total Pages is required
-    </div>
-
-    <button type="button" class="btn btn-default form-control" 
+    <button type="button" class="btn btn-default" 
             [disabled]="!addform.form.valid"
             (click)="bookSubmit(); addform.reset()">Add Book</button>
-
+          
   </form>
-</div>
 
-<hr>
+</div>

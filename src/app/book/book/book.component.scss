@@ -1,16 +1,12 @@
 @import '~styles.scss';
 
-.book--content {
+.book__content {
   color: $font-color;
   margin-top: 0;
   font-size: 20vw;
   text-align: center;
 }
 
-.book--page-count {
-  font-size: 6vw;
-}
-
-.book--title {
+.book__title {
   font-size: 1.5vw;
 }

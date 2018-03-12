@@ -1,7 +1,7 @@
 <app-book-actions [(action)]="shownAction"></app-book-actions>
 
   <div class="row">
-    <div class="col book--content">
+    <div class="col book__content">
       <div *ngIf="activeBook">
         <div *ngIf="shownAction === ''">
           <app-add-bookmark 
@@ -10,7 +10,7 @@
             (onAddBookmark)="onAddBookmark($event)">
           </app-add-bookmark>
           
-          <p class="book--title">{{activeBook.title}}</p>
+          <p class="book__title">{{activeBook.title}}</p>
         </div>
 
         <div *ngIf="shownAction === 'bookList'">

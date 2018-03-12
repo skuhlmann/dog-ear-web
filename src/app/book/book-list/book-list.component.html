@@ -1,24 +1,30 @@
 <div class="container" *ngIf="books.length>0;else noData">
-  <ul *ngFor="let item of books" class="list-group">
+  <div class="row book-list__card" *ngFor="let item of books">
 
-    <li>
-        <input type="text" [(ngModel)]="item.title" name="title" class="form-control" id="title" (blur)="update(item)">
-    </li>
-    <li>
-        <label for="pageCount">Total Pages</label>
-        <input type="number" [(ngModel)]="item.pageCount" name="pageCount" class="form-control" id="pageCount" #pageCount="ngModel" (blur)="update(item)">
-    </li>
+    <div class="col">
+      <input disabled type="text" class="book-list__input book-list__input--title" id="title"
+      [(ngModel)]="item.title" name="title"
+      (keyup.enter)="update(item)" (blur)="update(item)">
 
+      <input disabled type="number" class="book-list__input" id="pageCount" 
+              [(ngModel)]="item.pageCount" name="pageCount"
+              (keyup.enter)="update(item)" (blur)="update(item)">
+      <p class="book-list__label">Total pages</p>
 
-    <li>
-        <button (click)="update(item)" >Update Me!</button> | <button (click)="select(item)" >Select Me!</button> | <button (click)="delete(item)" >Delete Me!</button>
-    </li>
-  </ul>
+    </div>
+
+    <div class="col book-list__links">
+      <p class="book-list__link" (click)="select(item)"> <i class="fas fa-check-circle"></i>Select</p>
+      <p class="book-list__link" (click)="delete(item)"> <i class="fas fa-trash"></i>Delete this book</p>
+    </div>
+
+  </div>
 </div>
 
 <div class="container">
   <ng-template #noData>
-    <hr>
-    <h5>There are no books to display</h5>
+    <h5>You need a book</h5>
   </ng-template>
 </div>
+
+

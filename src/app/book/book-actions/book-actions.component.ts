@@ -14,15 +14,22 @@ export class BookActionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.showForm = false;
+    this.showForm = false
     this.showList = false
+  }
+
+  ngOnChanges() {
+    if (this.action === "") {
+      this.showForm = false;
+      this.showList = false
+    }
   }
 
   toggle(type) {
     this[type] = !this[type];
     
     if (!this.showingAction()) {
-      this.action = ''
+      this.action = ""
     } else {
       this.action = this.showForm ? "bookForm" : "bookList"
     }

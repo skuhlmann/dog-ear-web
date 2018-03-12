@@ -1,24 +1,22 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="col header--title">
-        <h1>
-          <i class="far fa-circle"></i>
-        </h1>
-      </div>
+  <div class="row">
+    <div class="col header">
+      <h1 class="header__title">
+        <i class="far fa-circle"></i>
+      </h1>
+    </div>
 
-      <div class="col header--nav-links">
-        
-        <app-user-profile></app-user-profile>
+    <div class="col header__nav">
+      
+      <app-user-profile></app-user-profile>
 
-        <div *ngIf="auth.user | async">
-
-          <a class="header--link" *ngIf="router.url !== '/book'" 
-              routerLink="/book" 
-              routerLinkActive="active">
-            <i class="far fa-bookmark"></i>
-          </a>
-        </div>
-
+      <div *ngIf="auth.user | async">
+        <a class="header__link" *ngIf="router.url !== '/book'" 
+            routerLink="/book" 
+            routerLinkActive="active">
+          <i class="far fa-bookmark"></i>
+        </a>
       </div>
     </div>
   </div>
+</div>

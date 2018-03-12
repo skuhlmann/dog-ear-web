@@ -1,26 +1,22 @@
 @import '~styles.scss';
 
-.centered {
-  text-align: center;
-}
-
-.header--title {
+.header {
   text-align: left;
 }
 
-.header--title h1 {
+.header__title {
   font-size: 7vw;
   font-weight: 700;
   padding: 5px;
   margin: 0px 0px 0px 0px;
 }
 
-.header--nav-links {
+.header__nav {
   padding-top: 10px;
   text-align: right;
 }
 
-.header--link {
+.header__link {
   padding: 5px;
   font-weight: 700;
   font-size: 3vw;

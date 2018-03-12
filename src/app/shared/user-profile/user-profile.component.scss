@@ -1,24 +1,20 @@
 @import '~styles.scss';
 
-.profile-img {
+.profile__img {
   width: 20px;
   border-radius: 50%;
 }
 
-.profile--menu {
+.profile__menu {
   margin-top: 10px;
   color: $font-color;
 }
 
-.profile--menu:hover {
+.profile__menu:hover {
   color: $primary-color;
-
 }
 
-.profile--link {
-  padding: 5px;
-}
-
-.profile--link span {
-  font-size: 10px
+.profile__link {
+  padding: 10px;
+  font-size: 1vw;
 }

@@ -14,7 +14,7 @@ export class BookComponent implements OnInit {
   activeBook: Book;
   marks: Bookmark[] = [];
   activeMark: Bookmark;
-  shownAction: string = "bookForm";
+  shownAction: string = "";
 
   constructor(public db: BookService) {}
 
@@ -48,6 +48,11 @@ export class BookComponent implements OnInit {
 
   onDelete(book) {
     this.db.deleteBook(book)
+  }
+
+  onAdd(book) {
+    this.db.addBook(book);
+    this.shownAction = "";
   }
 
   onAddBookmark(bookmark) {

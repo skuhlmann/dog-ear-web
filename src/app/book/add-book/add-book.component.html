@@ -3,25 +3,27 @@
   <p class="new-book__title">What are you reading?</p>
   
   <form #addform="ngForm">
-    <div class="new-book__form_group">
+    <div class="row new-book__form_section">
       <input type="text" class="new-book__input" id="title"
               required placeholder="Title"
               [(ngModel)]="model.title" name="title"
               #title="ngModel">
-      <p class="new-book__warning" [hidden]="title.valid || title.pristine">*required</p>
+      <span class="new-book__warning" [hidden]="title.valid || title.pristine">*required</span>
     </div>
 
-    <div class="new-book__form_group">
-        <input type="number" class="new-book__input" id="pageCount" 
+    <div class="row new-book__form_section">
+        <input type="number" autofocus class="new-book__input" id="pageCount" 
                 required placeholder="Total Pages"
                 [(ngModel)]="model.pageCount" name="pageCount"
                 #pageCount="ngModel">
         <p class="new-book__warning" [hidden]="pageCount.valid || pageCount.pristine">*required</p>
       </div>
 
-    <button type="button" class="btn btn-default" 
-            [disabled]="!addform.form.valid"
-            (click)="bookSubmit(); addform.reset()">Add Book</button>
+      <div class="row">
+        <button type="button" class="btn btn-default new-book__button" 
+                [disabled]="!addform.form.valid"
+                (click)="bookSubmit(); addform.reset()">Add my book</button>
+      </div>
           
   </form>
 

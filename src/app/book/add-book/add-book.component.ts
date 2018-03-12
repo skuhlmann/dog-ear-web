@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { BookService } from '../book.service';
 import { Book } from '../../models/book';
@@ -9,6 +9,7 @@ import { Book } from '../../models/book';
   styleUrls: ['./add-book.component.scss']
 })
 export class AddBookComponent implements OnInit {
+  @Output() onAdd = new EventEmitter<Book>();
 
   model = { 
     title: '', 
@@ -21,7 +22,12 @@ export class AddBookComponent implements OnInit {
   }
 
   bookSubmit() {
-    this.db.addBook(this.model);
+    const newBook: Book = {
+      title: this.model.title,
+      pageCount: +this.model.pageCount,
+    }
+    
+    this.onAdd.emit(newBook)
     this.model.title = '';
     this.model.pageCount = '';
   }

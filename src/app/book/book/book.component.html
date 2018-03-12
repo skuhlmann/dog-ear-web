@@ -23,7 +23,7 @@
         </div>
 
         <div *ngIf="shownAction === 'bookForm'">
-          <app-add-book></app-add-book>
+          <app-add-book (onAdd)="onAdd($event)"></app-add-book>
         </div>
         
       </div>

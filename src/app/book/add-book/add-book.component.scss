@@ -4,20 +4,21 @@
   text-align: center;
 }
 
-.new-book__form_group {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  line-height: .2em;
-}
-
 .new-book__title {
   font-size: 3vw;
 }
 
+.new-book__form_section {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  // height: .5em;
+
+}
+
 .new-book__input-label {
-  font-size: 2vw;
+  // font-size: 2vw;
   text-align: left;
 }
 
@@ -25,19 +26,15 @@
   width: 100%;
   background-color: $primary-color;
   color: $font-color;
-  // caret-color: $font-color;
+  caret-color: $font-color;
   border: 0;
   border-bottom: 1px solid $font-color;
   border-radius: 0;
-  max-height: 50px;
+  // max-height: 50px;
   font-size: 3vw;
 }
 
 .new-book__input:focus {
-  // background-color: $primary-color;
-  // color: $font-color;
-  // caret-color: $font-color;
-  // border: 0;
   outline: none !important;
 }
 
@@ -45,7 +42,14 @@
   color: #A94442;
   font-weight: 700;
   font-size: 1vw;
-  text-align: left
+  text-align: left;
+  display: inline-block;
+}
+
+.new-book__button {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ng-valid[required], .ng-valid.required {

@@ -3,7 +3,6 @@
 <ng-template #guest>
   <p class="profile__menu" (click)="auth.googleLogin()">
     <a class="profile__link">
-      <span>login</span>
       <i class="fab fa-google"></i>
     </a>
   </p>
@@ -13,7 +12,6 @@
   <div *ngIf="auth.user | async as user">
     <p class="profile__menu" (click)="auth.signOut()">
       <a class="profile__link">
-        <span>logout</span>
         <img class="profile__img" [src]="user.photoURL">
       </a>
   </div>

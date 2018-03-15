@@ -1,7 +1,7 @@
-<app-book-actions [(action)]="shownAction"></app-book-actions>
+<div class="row">
 
-  <div class="row">
-    <div class="col book__content">
+  <div class="col">
+    <div class="book__content">
       <div *ngIf="activeBook">
         <div *ngIf="shownAction === ''">
           <app-add-bookmark 
@@ -12,7 +12,7 @@
           
           <p class="book__title">{{activeBook.title}}</p>
         </div>
-
+    
         <div *ngIf="shownAction === 'bookList'">
           <app-book-list 
             [books]="books"
@@ -21,14 +21,19 @@
             (onDelete)="onDelete($event)">
           </app-book-list>
         </div>
-
+    
         <div *ngIf="shownAction === 'bookForm'">
           <app-add-book (onAdd)="onAdd($event)"></app-add-book>
         </div>
-        
       </div>
     </div>
   </div>
+
+  <div class="col-3">
+    <app-book-actions [(action)]="shownAction"></app-book-actions>
+  </div>
+
+</div>
 
 
 

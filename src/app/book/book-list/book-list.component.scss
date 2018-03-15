@@ -7,7 +7,9 @@
   font-size: 2vw;
   color: $font-color;
   margin-bottom: 20px;
-  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid $font-color;
+  overflow: visible;
 }
 
 .book-list__input {
@@ -16,7 +18,6 @@
   color: $font-color;
   caret-color: $font-color;
   border: 0;
-  // border-bottom: 1px solid $font-color;
   border-radius: 0;
   font-size: 2vw;
 }
@@ -30,22 +31,22 @@
 }
 
 .book-list__label {
-  text-align: left;
   font-size: 1vw;
-}
-
-.book-list__links {
-  text-align: left;
-  margin-top: 20px;
 }
 
 .book-list__link {
-  font-size: 1vw;
+  font-size: 3vw;
   padding: 10px;
 }
 
 .book-list__link:hover {
   color: $primary-color;
   background-color: $font-color;
+}
 
+.book-list__title {
+  font-size: 4vw;
+  padding: 0 10px 0 10px;
+  margin-bottom: 2px;
+  display: block;
 }

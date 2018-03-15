@@ -14,7 +14,7 @@ export class BookComponent implements OnInit {
   activeBook: Book;
   marks: Bookmark[] = [];
   activeMark: Bookmark;
-  shownAction: string = "bookList";
+  shownAction: string = "";
 
   constructor(public db: BookService) {}
 

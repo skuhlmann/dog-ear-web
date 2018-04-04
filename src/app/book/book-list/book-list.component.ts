@@ -24,6 +24,8 @@ export class BookListComponent {
   }
 
   delete(book: Book) {
+
+		console.log("hitting")
     this.onDelete.emit(book)
   }
 }

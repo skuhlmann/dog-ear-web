@@ -9,24 +9,24 @@
     <div class="book__content">
       <div *ngIf="activeBook">
         <div *ngIf="shownAction === ''">
-          <app-add-bookmark 
+          <app-add-bookmark
             [bookmark]="activeMark"
             [totalPages]="activeBook.pageCount"
             (onAddBookmark)="onAddBookmark($event)">
           </app-add-bookmark>
-          
+
           <p class="book__title">{{activeBook.title}}</p>
         </div>
-    
+
         <div *ngIf="shownAction === 'bookList'">
-          <app-book-list 
+          <app-book-list
             [books]="books"
             (onSelect)="onSelect($event)"
             (onUpdate)="onUpdate($event)"
             (onDelete)="onDelete($event)">
           </app-book-list>
         </div>
-    
+
         <div *ngIf="shownAction === 'bookForm'">
           <app-add-book (onAdd)="onAdd($event)"></app-add-book>
         </div>

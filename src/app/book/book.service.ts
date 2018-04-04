@@ -18,8 +18,11 @@ export class BookService {
   marks: Observable<Bookmark[]>;
   currentUser: User;
 
-  constructor(public db: AngularFirestore, public auth: AuthService ) { 
-    this.bookscollection = this.db.collection('books', x => x.where('userId', '==', auth.currentUser.uid));
+  constructor(public db: AngularFirestore, public auth: AuthService ) {
+    this.bookscollection = this.db.collection('books', x => {
+			return x.where('userId', '==', auth.currentUser.uid)
+			        .orderBy('title')
+		});
 
     this.books = this.bookscollection.snapshotChanges().map(
       changes => {
@@ -31,7 +34,7 @@ export class BookService {
           });
       });
   }
-     
+
   getBooks() {
     return this.books;
   }
@@ -51,12 +54,12 @@ export class BookService {
       });
 
   }
-  
+
   addBook(book) {
     book.userId = this.auth.currentUser.uid;
     this.bookscollection.add(book);
   }
-  
+
   deleteBook(book) {
     this.bookDoc = this.db.doc(`books/${book.id}`);
     this.bookDoc.delete();

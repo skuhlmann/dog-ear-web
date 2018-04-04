@@ -5,16 +5,21 @@
       <input disabled type="text" class="book-list__input book-list__input--title" id="title"
       [(ngModel)]="item.title" name="title"
       (keyup.enter)="update(item)" (blur)="update(item)">
-      
-      <input disabled type="number" class="book-list__input" id="pageCount" 
+
+      <input disabled type="number" class="book-list__input" id="pageCount"
       [(ngModel)]="item.pageCount" name="pageCount"
       (keyup.enter)="update(item)" (blur)="update(item)">
       <p class="book-list__label">Total pages</p>
     </div>
 
-    <p class="book-list__title">{{item.title}}</p>
-    <p class="book-list__link" (click)="select(item)"> <i class="fas fa-check-circle"></i> Select</p>
-    <p class="book-list__link" (click)="delete(item)"> <i class="fas fa-trash"></i> Delete this book</p>
+		<p class="book-list__title" (click)="select(item)">
+			<span *ngIf="item.active"><i class="fas fa-check"></i></span>
+			{{item.title}}
+		</p>
+    <p class="book-list__link"> <span (click)="delete(item)">
+			<i class="fas fa-trash"></i>
+			</span>
+		</p>
 
   </div>
 </div>

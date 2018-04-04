@@ -1,13 +1,14 @@
 @import '~styles.scss';
 
 .bookmark__input {
+  font-size: 20vw;
   border: 0;
   background-color: $primary-color;
   color: $font-color;
   caret-color: $font-color;
   width: 70%;
   text-align: center;
-  height: 75%;
+  height: 100%;
 }
 
 .bookmark__input:focus {

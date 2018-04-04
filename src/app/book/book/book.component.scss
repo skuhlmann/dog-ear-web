@@ -2,11 +2,15 @@
 
 .book__content {
   color: $font-color;
-  margin-top: 30%;
-  font-size: 20vw;
+  // margin-top: 30%;
+  // font-size: 20vw;
   text-align: center;
 }
 
 .book__title {
   font-size: 1.5vw;
+}
+
+.book__actions {
+  padding-left: 0px;
 }

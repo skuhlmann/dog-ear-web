@@ -1,11 +1,12 @@
 @import '~styles.scss';
 
 .book-actions {
-  text-align: center;
+  text-align: left;
   color: $font-color;
 }
 
 .book-actions__icon {
+  text-align: center;
   font-size: 10vw;
 }
 

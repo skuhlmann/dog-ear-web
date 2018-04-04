@@ -13,10 +13,12 @@
     </div>
 
 		<p class="book-list__title" (click)="select(item)">
-			<span *ngIf="item.active"><i class="fas fa-check"></i></span>
-			{{item.title}}
+      {{item.title}}
+			<span *ngIf="item.active">
+        <i class="fas fa-check"></i>
+      </span>
 		</p>
-    <p class="book-list__link"> <span (click)="delete(item)">
+    <p *ngIf="false" class="book-list__link"> <span (click)="delete(item)">
 			<i class="fas fa-trash"></i>
 			</span>
 		</p>

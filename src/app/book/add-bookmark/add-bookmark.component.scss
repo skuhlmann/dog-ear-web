@@ -9,6 +9,10 @@
   width: 70%;
   text-align: center;
   height: 100%;
+  @media (max-width: 574px) {
+    font-size: 30vw;
+    
+  }
 }
 
 .bookmark__input:focus {

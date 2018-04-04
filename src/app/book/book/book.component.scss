@@ -14,3 +14,11 @@
 .book__actions {
   padding-left: 0px;
 }
+
+.bookmark {
+  @media (max-width: 702px) {
+    position: fixed !important;
+    top: 200px;
+    z-index: -1;
+  }
+}

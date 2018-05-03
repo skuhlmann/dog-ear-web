@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NavService } from './nav.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
@@ -9,6 +10,10 @@ import { AuthGuard } from './auth.guard';
     CommonModule,
   ],
   declarations: [],
-  providers: [AuthService, AuthGuard]
+  providers: [
+    NavService, 
+    AuthService, 
+    AuthGuard
+  ]
 })
 export class CoreModule { }

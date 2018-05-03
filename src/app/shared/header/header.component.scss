@@ -1,7 +1,10 @@
 @import '~styles.scss';
 
 .header {
-  text-align: left;
+  display: flex;
+  flex-direction: row;
+
+  color: $font-color;
 }
 
 .header__title {

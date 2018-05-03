@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BookService } from '../book.service';
+import { NavService } from '../../core/nav.service';
 import { Book } from '../../models/book';
 import { Bookmark } from '../../models/bookmark';
 
@@ -14,9 +15,9 @@ export class BookComponent implements OnInit {
   activeBook: Book;
   marks: Bookmark[] = [];
   activeMark: Bookmark;
-  shownAction: string = "";
+  // shownAction: string = "";
 
-  constructor(public db: BookService) {}
+  constructor(public db: BookService, public nav: NavService) {}
 
   ngOnInit() {
     this.db.getBooks().subscribe(
@@ -40,7 +41,7 @@ export class BookComponent implements OnInit {
   onSelect(book) {
     this.activeBook = book;
     this.fetchBookmarks();
-    this.shownAction = "";
+    // this.shownAction = "";
   }
 
   onUpdate(book) {
@@ -53,7 +54,7 @@ export class BookComponent implements OnInit {
 
   onAdd(book) {
     this.db.addBook(book);
-    this.shownAction = "";
+    // this.shownAction = "";
   }
 
   onAddBookmark(bookmark) {

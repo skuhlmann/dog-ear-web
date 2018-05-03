@@ -1,18 +1,19 @@
 <div *ngIf="auth.user | async; then authenticated else guest"></div>
 
 <ng-template #guest>
-  <p class="profile__menu" (click)="auth.googleLogin()">
-    <a class="profile__link">
-      <i class="fab fa-google"></i>
-    </a>
-  </p>
+  <div class="profile__menu" (click)="auth.googleLogin()">
+    <i class="fab fa-google profile__link"></i>
+  </div>
 </ng-template>
 
 <ng-template #authenticated>
+  <!-- <div>
+    <img class="profile__img" [src]="user.photoURL" (click)="auth.signOut()">
+  </div> -->
+
   <div *ngIf="auth.user | async as user">
-    <p class="profile__menu" (click)="auth.signOut()">
-      <a class="profile__link">
-        <img class="profile__img" [src]="user.photoURL">
-      </a>
+    <img class="profile__img" [src]="user.photoURL" (click)="auth.signOut()">
   </div>
+
+
 </ng-template>

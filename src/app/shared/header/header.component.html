@@ -1,16 +1,10 @@
-<div class="row">
-  <div class="col header">
-    <h1 class="header__title">
-      <i class="far fa-circle"></i>
-    </h1>
-    <app-user-profile></app-user-profile>
-    
-    <div *ngIf="auth.user | async">
-      <a class="header__link" *ngIf="router.url !== '/book'" 
-        routerLink="/book" 
-        routerLinkActive="active">
-        <i class="fas fa-bowling-ball"></i>
-      </a>
-    </div>
-  </div>
+
+<div class="header">
+  <a (click)="nav.activate('book')"><i class="far fa-circle header__title"></i></a>
+  
+  <app-user-profile></app-user-profile>
+
+  <a (click)="nav.activate('bookForm')"><i class="fas fa-plus header__title"></i></a>
+
+  <a (click)="nav.activate('bookList')"><i class="fas fa-exchange-alt header__title"></i></a>
 </div>

@@ -2,8 +2,9 @@
   <div class="form-group">
     <input type="number" class="bookmark__input" 
             formControlName="page" (blur)="submitBookmark()">
-    <p class="bookmark__totals">
-      of {{ totalPages }} / {{ percentComplete }}%
-    </p>
   </div> 
 </form>
+
+<p class="bookmark__totals">
+  of {{ totalPages }} / {{ percentComplete }}%
+</p>

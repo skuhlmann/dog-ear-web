@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
 import { AuthService } from '../../core/auth.service';
-
-import 'rxjs/add/operator/switchMap';
+import { NavService } from '../../core/nav.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +12,7 @@ export class HeaderComponent {
   title: string;
   onBookmark: boolean;
 
-  constructor(public auth: AuthService, public router: Router) { 
+  constructor(public auth: AuthService, public router: Router, public nav: NavService) { 
     this.title = "dogear"; 
   }
 }

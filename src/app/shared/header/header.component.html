@@ -1,10 +1,13 @@
-
 <div class="header">
-  <a (click)="nav.activate('book')"><i class="far fa-circle header__title"></i></a>
+  <div *ngIf="auth.user | async">
+    <a (click)="navigate()"><i class="far fa-circle header__title"></i></a>
+  </div>
   
   <app-user-profile></app-user-profile>
 
-  <a (click)="nav.activate('bookForm')"><i class="fas fa-plus header__title"></i></a>
+  <div *ngIf="auth.user | async">
+    <a (click)="nav.activate('bookForm')"><i class="fas fa-plus header__title"></i></a>
 
-  <a (click)="nav.activate('bookList')"><i class="fas fa-exchange-alt header__title"></i></a>
+    <a (click)="nav.activate('bookList')"><i class="fas fa-exchange-alt header__title"></i></a>
+  </div>
 </div>

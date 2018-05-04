@@ -21,13 +21,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/book',
     pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
-    redirectTo: '/home',
+    redirectTo: '/book',
     pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
 ];
 

@@ -2,9 +2,7 @@
 
 .book__content {
   color: $font-color;
-  // margin-top: 30%;
-  // font-size: 20vw;
-  // text-align: center;
+  text-align: center;
 }
 
 .book__title {
@@ -14,12 +12,3 @@
 .book__actions {
   padding-left: 0px;
 }
-
-// .bookmark {
-//   @media (max-width: 702px) {
-//     position: fixed !important;
-//     top: 200px;
-//     left: 75px;
-//     // z-index: -1;
-//   }
-// }

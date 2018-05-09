@@ -1,72 +1,28 @@
-<!-- <div class="row">
 
-  <div class="col-3 book__actions">
-    <app-book-actions [(action)]="shownAction"></app-book-actions>
-  </div> -->
+<div class="book__content">
 
-      <div class="book__content">
-        {{nav.shownAction}}
+  <div *ngIf="activeBook">
+    <div *ngIf="nav.shownAction === 'book'">
+      <app-add-bookmark
+        [bookmark]="activeMark"
+        [totalPages]="activeBook.pageCount"
+        (onAddBookmark)="onAddBookmark($event)">
+      </app-add-bookmark>
 
-
-        <div *ngIf="activeBook">
-          <div *ngIf="nav.shownAction === 'book'">
-            <app-add-bookmark
-              [bookmark]="activeMark"
-              [totalPages]="activeBook.pageCount"
-              (onAddBookmark)="onAddBookmark($event)">
-            </app-add-bookmark>
-  
-            <p class="book__title">{{activeBook.title}}</p>
-          </div>
-  
-          <div *ngIf="nav.shownAction === 'bookList'">
-            <app-book-list
-              [books]="books"
-              (onSelect)="onSelect($event)"
-              (onUpdate)="onUpdate($event)"
-              (onDelete)="onDelete($event)">
-            </app-book-list>
-          </div>
-  
-          <div *ngIf="nav.shownAction === 'bookForm'">
-            <app-add-book (onAdd)="onAdd($event)"></app-add-book>
-          </div>
-        </div>
-      </div>
-
-
-  <!-- <div class="col bookmark">
-    <div class="book__content">
-      <div *ngIf="activeBook">
-        <div *ngIf="shownAction === ''">
-          <app-add-bookmark
-            [bookmark]="activeMark"
-            [totalPages]="activeBook.pageCount"
-            (onAddBookmark)="onAddBookmark($event)">
-          </app-add-bookmark>
-
-          <p class="book__title">{{activeBook.title}}</p>
-        </div>
-
-        <div *ngIf="shownAction === 'bookList'">
-          <app-book-list
-            [books]="books"
-            (onSelect)="onSelect($event)"
-            (onUpdate)="onUpdate($event)"
-            (onDelete)="onDelete($event)">
-          </app-book-list>
-        </div>
-
-        <div *ngIf="shownAction === 'bookForm'">
-          <app-add-book (onAdd)="onAdd($event)"></app-add-book>
-        </div>
-      </div>
+      <p class="book__title">{{activeBook.title}}</p>
     </div>
-  </div> -->
 
-<!-- </div> -->
+    <div *ngIf="nav.shownAction === 'bookList'">
+      <app-book-list
+        [books]="books"
+        (onSelect)="onSelect($event)"
+        (onUpdate)="onUpdate($event)"
+        (onDelete)="onDelete($event)">
+      </app-book-list>
+    </div>
 
-
-
-
-
+    <div *ngIf="nav.shownAction === 'bookForm'">
+      <app-add-book (onAdd)="onAdd($event)"></app-add-book>
+    </div>
+  </div>
+</div>

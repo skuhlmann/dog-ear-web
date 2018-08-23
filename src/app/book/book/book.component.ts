@@ -22,7 +22,8 @@ export class BookComponent implements OnInit {
     this.db.getBooks().subscribe(
       (book: Book[]) => {
         this.books = book;
-        this.activeBook = this.books.find(b => b.active);
+        // this.activeBook = this.books.find(b => b.active);
+        this.activeBook = this.books[0];
         this.fetchBookmarks();
       }
     );

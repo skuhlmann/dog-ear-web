@@ -7,13 +7,9 @@
 </ng-template>
 
 <ng-template #authenticated>
-  <!-- <div>
-    <img class="profile__img" [src]="user.photoURL" (click)="auth.signOut()">
-  </div> -->
 
   <div *ngIf="auth.user | async as user">
     <img class="profile__img" [src]="user.photoURL" (click)="auth.signOut()">
   </div>
-
 
 </ng-template>

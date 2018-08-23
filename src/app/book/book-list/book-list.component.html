@@ -1,17 +1,6 @@
 <div *ngIf="books.length>0;else noData">
   <div class="row book-list__card" *ngFor="let item of books">
 
-    <div *ngIf="false">
-      <input disabled type="text" class="book-list__input book-list__input--title" id="title"
-      [(ngModel)]="item.title" name="title"
-      (keyup.enter)="update(item)" (blur)="update(item)">
-
-      <input disabled type="number" class="book-list__input" id="pageCount"
-      [(ngModel)]="item.pageCount" name="pageCount"
-      (keyup.enter)="update(item)" (blur)="update(item)">
-      <p class="book-list__label">Total pages</p>
-    </div>
-
 		<p class="book-list__title" (click)="select(item)">
       {{item.title}}
 			<span *ngIf="item.active">

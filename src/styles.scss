@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-$primary-color: #8AA39B;
+$primary-color: #41e1c7;
 $font-color: white;
 $warning-color: #dc661e;
 
@@ -23,8 +23,7 @@ a {
 }
 
 a:hover {
-  background-color: $font-color;
-  color: $primary-color;
+  color: $warning-color;
   text-decoration: none;
 }
 
@@ -33,14 +32,7 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="number"] {
     -moz-appearance: textfield;
 }
-
-// .ng-valid[required], .ng-valid.required {
-//   border-left: 3px solid #42A948;
-// }
-
-// .ng-invalid:not(form) {
-//   border-left: 3px solid #A94442;
-// }

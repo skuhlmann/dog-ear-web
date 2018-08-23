@@ -1,15 +1,18 @@
 @import '~styles.scss';
 
 .new-book {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .new-book__title {
-  font-size: 3vw;
+  font-size: 5vw;
+  font-weight: 700;
 }
 
 .new-book__form_section {
-  width: 50%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
@@ -27,31 +30,28 @@
   border: 0;
   border-bottom: 1px solid $font-color;
   border-radius: 0;
-  font-size: 3vw;
+  font-size: 4vw;
 }
 
 .new-book__input:focus {
   outline: none !important;
 }
 
-.new-book__warning {
-  color: #A94442;
-  font-weight: 700;
-  font-size: 1vw;
-  text-align: left;
-  display: inline-block;
-}
-
 .new-book__button {
-  width: 50%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $primary-color;
+  background-color: $font-color;
+  border-radius: 8px;
 }
 
 .ng-valid[required], .ng-valid.required {
-  border-bottom: 1px solid #42A948;
+  border-bottom: 2px solid $font-color;
 }
 
 .ng-invalid:not(form) {
-  border-bottom: 1px solid #A94442;
+  border-bottom: 2px solid #bff4eb;
 }

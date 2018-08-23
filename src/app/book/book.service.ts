@@ -21,7 +21,7 @@ export class BookService {
   constructor(public db: AngularFirestore, public auth: AuthService ) {
     this.bookscollection = this.db.collection('books', x => {
 			return x.where('userId', '==', auth.currentUser.uid)
-			        .orderBy('title')
+			        .orderBy('date', 'desc')
 		});
 
     this.books = this.bookscollection.snapshotChanges().map(
@@ -57,6 +57,7 @@ export class BookService {
 
   addBook(book) {
     book.userId = this.auth.currentUser.uid;
+    book.date = fb.firestore.FieldValue.serverTimestamp()
     this.bookscollection.add(book);
   }
 
